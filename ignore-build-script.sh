@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$VERCEL_GIT_COMMIT_REF" != "main"  ] || [ "$VERCEL_GIT_COMMIT_REF" != "develop"  ]]  ; then
+if [[ "$VERCEL_GIT_COMMIT_REF" != "main"  && "$VERCEL_GIT_COMMIT_REF" != "develop"  ]]  ; then
   # Don't build
   echo "🛑 - Build cancelled"
   exit 0;
