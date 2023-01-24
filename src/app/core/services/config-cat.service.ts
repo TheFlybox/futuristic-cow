@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import {
   getClient,
   IConfigCatClient,
@@ -6,7 +6,6 @@ import {
   IConfigCatLogger,
   PollingMode,
 } from 'configcat-js';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +15,7 @@ export class ConfigCatService {
   private logger?: IConfigCatLogger;
 
   public newClient(key: string, logLevel = 3): void {
-    if (environment.production) this.logger = createConsoleLogger(logLevel);
+    if (isDevMode()) this.logger = createConsoleLogger(logLevel);
     this._client = getClient(key, PollingMode.AutoPoll, {
       logger: this.logger,
     });

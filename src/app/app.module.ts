@@ -1,5 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +13,7 @@ const initializeApplication = (bootstrapService: BootstrapService) => {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [
     {
       provide: APP_INITIALIZER,
