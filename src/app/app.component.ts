@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    console.log('CONFIGKEY');
+    console.log('CONFIGKEY', process?.env?.NG_APP_CONFIG_CAT_KEY_DEVELOPMENT);
   }
 }

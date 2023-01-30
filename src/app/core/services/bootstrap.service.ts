@@ -8,6 +8,7 @@ export class BootstrapService {
   initialize(): Observable<number> {
     return new Observable<number>(observer => {
       observer.next(1);
+      observer.complete();
     });
   }
 }
