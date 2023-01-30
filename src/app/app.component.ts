@@ -11,5 +11,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.envService.getApplicationRootUrl();
+    console.log('CONFIGKEY', process?.env?.NG_APP_CONFIG_CAT_KEY_DEVELOPMENT);
   }
 }
